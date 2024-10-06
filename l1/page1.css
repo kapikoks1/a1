@@ -13,82 +13,82 @@ body {
 /* Tło z obrazem */
 body::before {
     content: "";
-    background: url('sam.jpg') no-repeat center center fixed; /* Obrazek na środku i przyklejony */
-    background-size: cover; /* Dopasowanie obrazka do całej strony */
+    background: url('sam.jpg') no-repeat center center fixed; 
+    background-size: cover; 
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.3; /* Ustawienie przezroczystości */
-    z-index: -1; /* Umieszczenie obrazu za treścią */
+    opacity: 0.3; 
+    z-index: -1; 
 }
 
 /* Stylizacja nagłówka */
 header {
-    background: linear-gradient(to right, rgba(0, 123, 255, 0.8), rgba(0, 193, 255, 0.8)); /* Gradient tła */
-    padding: 20px 0; /* Większe odstępy */
+    background: linear-gradient(to right, rgba(0, 123, 255, 0.8), rgba(0, 193, 255, 0.8)); 
+    padding: 20px 0; 
     text-align: center;
     color: white;
-    z-index: 2; /* Treść powyżej tła */
-    position: relative; /* Pozycjonowanie nagłówka */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Dodanie cienia do nagłówka */
-    border-radius: 0 0 20px 20px; /* Zaokrąglenie dolnych krawędzi */
+    z-index: 2; 
+    position: relative; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+    border-radius: 0 0 20px 20px; 
 }
 
 header h1 {
     margin: 0;
-    font-size: 40px; /* Większa czcionka */
-    font-weight: 700; /* Grubsza czcionka */
-    text-transform: uppercase; /* Duże litery */
-    letter-spacing: 1px; /* Rozstawienie liter */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Cień dla nagłówka */
+    font-size: 40px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
 }
 
 /* Stylizacja nawigacji */
 nav {
-    margin-top: 10px; /* Odstęp nad nawigacją */
-    display: flex; /* Użycie flexboxa dla równego rozmieszczenia */
-    justify-content: center; /* Wyśrodkowanie nawigacji */
+    margin-top: 10px; 
+    display: flex; 
+    justify-content: center;
 }
 
 nav a {
-    color: white; /* Kolor tekstu nawigacji */
-    margin: 0 20px; /* Odstępy między linkami */
-    text-decoration: none; /* Brak podkreślenia */
-    font-weight: bold; /* Grubsza czcionka */
-    position: relative; /* Pozycjonowanie dla efektów */
-    transition: color 0.3s ease, transform 0.3s ease; /* Płynne przejście kolorów i transformacji */
+    color: white; 
+    margin: 0 20px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav a::after {
-    content: ""; /* Tworzenie pseudo-elementu */
+    content: ""; 
     display: block;
-    width: 100%; /* Szerokość linku */
-    height: 2px; /* Wysokość efektu podkreślenia */
-    background: white; /* Kolor podkreślenia */
-    transform: scaleX(0); /* Ukrycie początkowo */
-    transition: transform 0.3s ease; /* Płynne przejście */
+    width: 100%; 
+    height: 2px; 
+    background: white; 
+    transform: scaleX(0); 
+    transition: transform 0.3s ease; 
 }
 
 nav a:hover::after {
-    transform: scaleX(1); /* Efekt podkreślenia po najechaniu */
+    transform: scaleX(1); 
 }
 
 nav a:hover {
-    color: #ffdd57; /* Zmieniony kolor na hover */
-    transform: translateY(-2px); /* Lekki ruch do góry po najechaniu */
+    color: #ffdd57; 
+    transform: translateY(-2px);
 }
 
 /* Sekcja tekstowa: lewa i prawa kolumna */
 .text-section {
     display: flex;
-    justify-content: space-between; /* Rozdziela treści na lewo i prawo */
-    align-items: flex-start; /* Dopasowanie do góry sekcji */
+    justify-content: space-between;
+    align-items: flex-start;
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Lekko przezroczyste tło dla treści */
+    background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     position: relative;
@@ -96,25 +96,25 @@ nav a:hover {
 }
 
 .left-section, .right-section {
-    width: 48%; /* Szerokość kolumn */
-    text-align: left; /* Wyrównanie tekstu do lewej */
-    color: black; /* Kolor czarny dla tekstu */
+    width: 48%; 
+    text-align: left; 
+    color: black; 
 }
 
 /* Poprawienie listowania */
 ul {
-    padding-left: 20px; /* Mniejszy odstęp między kropkami a tekstem */
+    padding-left: 20px; 
 }
 
 /* Dodatkowe stylizacje dla nagłówków */
 .text-section h2 {
-    color: #007BFF; /* Kolor nagłówka na niebiesko */
+    color: #007BFF; 
 }
 
 /* Sekcja z kartami */
 .cards {
     display: flex;
-    flex-wrap: wrap; /* Umożliwienie zawijania kart */
+    flex-wrap: wrap; 
     justify-content: space-between;
     max-width: 1200px;
     margin: 20px auto;
@@ -127,16 +127,18 @@ ul {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 10px;
-    flex: 1 1 30%; /* Umożliwienie elastycznego rozmiaru kart */
+    flex: 1 1 30%; 
     transition: transform 0.3s ease;
+    position: relative; 
+    padding-bottom: 40px; 
 }
 
 .card:hover {
-    transform: translateY(-10px); /* Przesunięcie w górę po najechaniu */
+    transform: translateY(-10px); 
 }
 
 .card h2 {
-    color: #007BFF; /* Kolor nagłówka */
+    color: #007BFF; 
     font-size: 24px;
     margin: 0 0 10px;
 }
@@ -147,20 +149,41 @@ ul {
     margin: 0 0 15px;
 }
 
+/* Stylizacja linku "Czytaj więcej" */
 .read-more {
-    text-decoration: none;
-    color: #007BFF;
-    font-weight: bold;
+    position: absolute; 
+    right: 20px;
+    bottom: 20px; 
+    text-decoration: none; 
+    color: #007BFF; 
+    font-weight: bold; 
     transition: color 0.3s ease;
 }
 
 .read-more:hover {
-    color: #0056b3; /* Kolor po najechaniu */
+    color: #ea0404; 
+}
+
+/* Stylizacja nagłówków h3 */
+h3 {
+    text-align: center; 
+    font-weight: bold; 
+    font-size: 22px; 
+    color: #000000; 
+}
+
+/* Stylizacja akapitów (p) w sekcji kart pod nagłówkami h3 */
+.cards h3 + p {
+    font-style: italic; 
+    text-indent: 40px; 
+    line-height: 1.6;
+    margin-top: 10px; 
+    color: #555; 
 }
 
 /* Stylizacja stopki */
 footer {
-    background-color: rgba(51, 51, 51, 0.8); /* Przezroczyste tło stopki */
+    background-color: rgba(51, 51, 51, 0.8); 
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -176,4 +199,54 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Responsywność - małe ekrany (np. smartfony) */
+@media (max-width: 768px) {
+    /* Ustawienie kolumn jedna pod drugą */
+    .text-section {
+        flex-direction: column;
+    }
+
+    .left-section, .right-section {
+        width: 100%; /* Zmiana szerokości na 100% */
+        margin-bottom: 20px; /* Dodanie odstępu między sekcjami */
+    }
+
+    /* Ustawienie kart w jednej kolumnie */
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%; /* Karty zajmują pełną szerokość */
+        max-width: 400px; /* Opcjonalnie: maksymalna szerokość kart */
+        margin-bottom: 20px; /* Odstęp między kartami */
+    }
+
+    /* Dostosowanie rozmiaru tekstu */
+    header h1 {
+        font-size: 32px; /* Zmniejszenie czcionki w nagłówku */
+    }
+
+    nav a {
+        margin: 0 10px; /* Zmniejszenie odstępów między linkami */
+        font-size: 14px; /* Zmniejszenie czcionki */
+    }
+}
+
+/* Responsywność - bardzo małe ekrany (np. telefony poniżej 500px) */
+@media (max-width: 500px) {
+    header h1 {
+        font-size: 24px; /* Jeszcze mniejsze czcionki dla nagłówków */
+    }
+
+    .card h2 {
+        font-size: 20px; /* Zmniejszenie nagłówków kart */
+    }
+
+    .read-more {
+        font-size: 14px; /* Zmniejszenie tekstu linków "Czytaj więcej" */
+    }
 }
