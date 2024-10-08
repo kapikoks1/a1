@@ -14,7 +14,7 @@ body {
 /* Tło z obrazem */
 body::before {
     content: "";
-    background: url('sam.jpg') no-repeat center center fixed;
+    background: url('zdjecia/sam.jpg') no-repeat center center fixed;
     background-size: cover;
     position: absolute;
     top: 0;
@@ -273,4 +273,100 @@ footer a:hover {
     .read-more {
         font-size: 14px;
     }
+}
+/* Stylizacja kontenera zegarów */
+.clock-container {
+    display: flex; 
+    justify-content: center;
+    margin: 40px auto; 
+    position: relative;
+}
+
+/* Stylizacja pojedynczego zegara */
+.clock {
+    width: 120px; 
+    margin: 0 15px; 
+    position: relative; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+    text-align: center; 
+    padding: 15px;
+    background-size: cover; 
+    background-position: center; 
+    overflow: hidden; 
+}
+
+/* Overlay dla półprzezroczystości */
+.clock::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.6); 
+    z-index: 1; 
+}
+
+/* Stylizacja zegarów z flagami */
+#clock-warsaw {
+    background-image: url('zdjecia/pl.png'); 
+}
+
+#clock-london {
+    background-image: url('zdjecia/eng.png');
+}
+
+#clock-beijing {
+    background-image: url('zdjecia/ch.png'); 
+}
+
+#clock-newyork {
+    background-image: url('zdjecia/am.png'); 
+}
+
+.city-name {
+    font-weight: 700;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.digital-time {
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #333;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Stylizacja wstążki */
+.ribbon {
+    width: 150px;
+    height: 150px;
+    overflow: hidden; /* Ukrycie nadmiaru */
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: 10;
+}
+
+.ribbon span {
+    position: absolute;
+    display: block;
+    width: 200px;
+    padding: 10px 0;
+    background: red;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    top: 30px;
+    right: -50px;
+    transform: rotate(45deg); /* Obrót wstążki */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }

@@ -13,7 +13,7 @@ body {
 
 body::before {
     content: "";
-    background: url('zegar.jpg') no-repeat center center fixed;
+    background: url('zdjecia/zegar.jpg') no-repeat center center fixed;
     background-size: cover;
     position: absolute;
     top: 0;
@@ -205,7 +205,42 @@ nav a:hover {
     color: #555;
     font-size: 16px;
     margin: 0 0 15px;
+    position: relative;
+    overflow: hidden; 
+    max-height: 120px; 
+    mask-image: linear-gradient(rgba(255, 255, 255, 1) 50%, transparent 100%); 
+    -webkit-mask-image: linear-gradient(rgba(255, 255, 255, 1) 50%, transparent 100%); 
+    transition: max-height 0.3s ease, mask-image 0.3s ease; 
 }
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: rgba(211, 211, 211, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.read-more:hover {
+    background-color: rgba(255, 165, 0, 0.5); 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Efekt blaknięcia po najechaniu na przycisk */
+.card:hover p {
+    max-height: none; /* Rozszerza akapit */
+    mask-image: none; /* Usuwa efekt blaknięcia */
+    color: #555; /* Utrzymuje kolor tekstu */
+}
+
 
 footer {
     background-color: rgba(51, 51, 51, 0.8);
@@ -247,53 +282,54 @@ footer a:hover {
 
 .hand {
     position: absolute;
-    background: #333; /* Kolor ogólny dla wskazówek */
-    transform-origin: bottom center; /* Punkt obrotu na dolnej krawędzi i w centrum */
-    bottom: 50%; /* Ustawienie na środku tarczy zegara */
+    background: #333;
+    transform-origin: bottom center; 
+    bottom: 50%; 
 }
 
 /* Wskazówki */
 .hour-hand {
-    height: 35px; /* Długość wskazówki godzinowej */
-    width: 6px;   /* Szerokość wskazówki godzinowej */
-    border-radius: 5px; /* Zaokrąglenie krawędzi */
-    z-index: 3; /* Ustalanie warstwy */
-    background: #333; /* Kolor wskazówki */
+    height: 35px; 
+    width: 6px;   
+    border-radius: 5px;
+    z-index: 3; 
+    background: #333; 
 }
 
 .minute-hand {
-    height: 50px; /* Długość wskazówki minutowej */
-    width: 4px;   /* Szerokość wskazówki minutowej */
-    border-radius: 5px; /* Zaokrąglenie krawędzi */
-    z-index: 2; /* Ustalanie warstwy */
-    background: #333; /* Kolor wskazówki */
+    height: 50px; 
+    width: 4px;   
+    border-radius: 5px; 
+    z-index: 2; 
+    background: #333; 
 }
 
 .second-hand {
-    height: 60px; /* Długość wskazówki sekundowej */
-    width: 2px;   /* Szerokość wskazówki sekundowej */
-    border-radius: 5px; /* Zaokrąglenie krawędzi */
-    background: red; /* Kolor wskazówki sekundowej */
-    z-index: 1; /* Ustalanie warstwy */
+    height: 60px; 
+    width: 2px;   
+    border-radius: 5px; 
+    background: red; 
+    z-index: 1; 
 }
 
 
 
 /* Stylizacja cyfrowego czasu */
 .digital-time {
-    font-size: 2em; /* Rozmiar czcionki dla cyfrowego czasu */
-    margin: 10px 0; /* Marginesy */
-    position: absolute; /* Pozycjonowanie absolutne */
-    top: 160px; /* Pozycja w pionie */
-    text-align: center; /* Wyśrodkowanie tekstu */
+    font-size: 2em; 
+    margin: 10px 0; 
+    position: absolute; 
+    top: 160px; 
+    text-align: center; 
 }
 
 /* Stylizacja nazwy miasta */
 .city-name {
-    font-weight: bold; /* Pogrubienie czcionki */
-    font-size: 1.5em; /* Rozmiar czcionki */
-    position: absolute; /* Pozycjonowanie absolutne */
-    top: 15px; /* Pozycja w pionie */
+    font-size: 1.5em; 
+    font-weight: bold; 
+    text-align: center; 
+    margin-bottom: 190px; 
+    color: #333; 
 }
 
 
