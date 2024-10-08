@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moje Podróże</title>
     <link rel="stylesheet" href="page2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -15,7 +16,41 @@
             <a href="page2.html">CSS 2</a>
         </nav>
     </header>
-
+    
+    <div class="clock-container">
+        <div class="clock" id="clock-warsaw">
+            <div class="hand hour-hand" id="hour-hand-warsaw"></div>
+            <div class="hand minute-hand" id="minute-hand-warsaw"></div>
+            <div class="hand second-hand" id="second-hand-warsaw"></div>
+            <div class="city-name">Warszawa</div>
+            <div class="digital-time" id="digital-time-warsaw">00:00:00</div>
+        </div>
+        
+        <div class="clock" id="clock-london">
+            <div class="hand hour-hand" id="hour-hand-london"></div>
+            <div class="hand minute-hand" id="minute-hand-london"></div>
+            <div class="hand second-hand" id="second-hand-london"></div>
+            <div class="city-name">Londyn</div>
+            <div class="digital-time" id="digital-time-london">00:00:00</div>
+        </div>
+        
+        <div class="clock" id="clock-beijing">
+            <div class="hand hour-hand" id="hour-hand-beijing"></div>
+            <div class="hand minute-hand" id="minute-hand-beijing"></div>
+            <div class="hand second-hand" id="second-hand-beijing"></div>
+            <div class="city-name">Pekin</div>
+            <div class="digital-time" id="digital-time-beijing">00:00:00</div>
+        </div>
+        
+        <div class="clock" id="clock-newyork">
+            <div class="hand hour-hand" id="hour-hand-newyork"></div>
+            <div class="hand minute-hand" id="minute-hand-newyork"></div>
+            <div class="hand second-hand" id="second-hand-newyork"></div>
+            <span class="city-name">Nowy <span class="city-name-bold">Jork</span></span>
+            <div class="digital-time" id="digital-time-newyork">00:00:00</div>
+        </div>
+    </div>
+    
     <div class="text-section">
         <div class="left-section">
             <h2>Moje ulubione destynacje</h2>
@@ -44,24 +79,61 @@
             <h3>Moje Ostatnie Podróże</h3>
             <p>Odwiedziłem wiele niesamowitych miejsc, a każde z nich miało swój niepowtarzalny urok. W szczególności zapadła mi w pamięć podróż do Japonii, gdzie mogłem zobaczyć wschód słońca nad górą Fuji.</p>
             <a href="#" class="read-more">Czytaj więcej</a>
-            <img src="glob.jpg" alt="Zdjęcie Japonii" class="card-image">
         </div>
         <div class="card card2">
             <h3>Porady Podróżnicze</h3>
             <p>Podczas podróży nauczyłem się wielu praktycznych rzeczy. Kluczowe jest zawsze zaplanowanie trasy oraz elastyczność w dostosowywaniu się do sytuacji.</p>
             <a href="#" class="read-more">Czytaj więcej</a>
-            <img src="co.jpg" alt="Zdjęcie Japonii" class="card-image">
         </div>
         <div class="card card3">
             <h3>Co Zabrać w Podróż</h3>
             <p>Przygotowując się do podróży, ważne jest, aby spakować tylko niezbędne rzeczy. Minimalizm w bagażu sprawia, że podróżowanie staje się łatwiejsze i przyjemniejsze.</p>
             <a href="#" class="read-more">Czytaj więcej</a>
-            <img src="walizki.jpg" alt="Zdjęcie Japonii" class="card-image">
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Moje Podróże. Wszystkie prawa zastrzeżone. | <a href="#">Polityka prywatności</a>|</p>
+        <p>&copy; 2024 Moje Podróże. Wszystkie prawa zastrzeżone. | <a href="#">Polityka prywatności</a> |</p>
     </footer>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+
+            // Czas dla różnych miast
+            const times = {
+                warsaw: new Date(now.toLocaleString("pl-PL", { timeZone: "Europe/Warsaw" })), // Polska
+                london: new Date(now.toLocaleString("en-GB", { timeZone: "Europe/London" })), // Londyn
+                beijing: new Date(now.toLocaleString("en-CN", { timeZone: "Asia/Shanghai" })), // Pekin
+                newyork: new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" })) // Nowy Jork
+            };
+
+            for (const city in times) {
+                const time = times[city];
+                const hours = time.getHours(); // Użyj godziny 24-godzinnej
+                const minutes = time.getMinutes();
+                const seconds = time.getSeconds();
+
+                // Aktualizacja cyfrowego wyświetlania czasu
+                document.getElementById(`digital-time-${city}`).textContent = 
+                    `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+                // Ustawianie kątów dla wskazówek
+                const hourHand = document.getElementById(`hour-hand-${city}`);
+                const minuteHand = document.getElementById(`minute-hand-${city}`);
+                const secondHand = document.getElementById(`second-hand-${city}`);
+
+                // Ustalanie kątów dla wskazówek zegara
+                hourHand.style.transform = `rotate(${(hours % 12) * 30 + (minutes / 2)}deg)`; // 30 stopni na godzinę
+                minuteHand.style.transform = `rotate(${minutes * 6}deg)`; // 6 stopni na minutę
+                secondHand.style.transform = `rotate(${seconds * 6}deg)`; // 6 stopni na sekundę
+            }
+        }
+
+        // Aktualizacja zegarów co sekundę
+        setInterval(updateClock, 1000);
+        // Inicjalizacja zegarów przy załadowaniu strony
+        updateClock();
+    </script>
 </body>
 </html>

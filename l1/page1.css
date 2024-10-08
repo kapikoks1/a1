@@ -1,6 +1,6 @@
 /* Globalne style */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif; /* Nowa czcionka */
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -8,76 +8,88 @@ body {
     line-height: 1.6;
     position: relative;
     z-index: 1;
+    overflow-x: hidden;
 }
 
 /* Tło z obrazem */
 body::before {
     content: "";
-    background: url('sam.jpg') no-repeat center center fixed; 
-    background-size: cover; 
+    background: url('sam.jpg') no-repeat center center fixed;
+    background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.3; 
-    z-index: -1; 
+    opacity: 0.2; /* Zmniejszona przezroczystość tła */
+    z-index: -1;
 }
 
 /* Stylizacja nagłówka */
 header {
-    background: linear-gradient(to right, rgba(0, 123, 255, 0.8), rgba(0, 193, 255, 0.8)); 
-    padding: 20px 0; 
+    background: linear-gradient(to right, rgba(17, 17, 44, 0.9), rgba(0, 193, 255, 0.9)); /* Gradient bardziej wyrazisty */
+    padding: 30px 0;
     text-align: center;
     color: white;
-    z-index: 2; 
-    position: relative; 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
-    border-radius: 0 0 20px 20px; 
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 30px 30px; /* Zaokrąglone rogi */
 }
 
 header h1 {
     margin: 0;
-    font-size: 40px; 
-    font-weight: 700; 
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+    font-size: 48px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: #ffdd57; /* Wyrazisty kolor */
+}
+
+header h1 span {
+    color: #00C1FF; /* Kolor spana */
+    font-style: italic;
 }
 
 /* Stylizacja nawigacji */
 nav {
-    margin-top: 10px; 
-    display: flex; 
+    margin-top: 15px;
+    display: flex;
     justify-content: center;
 }
 
 nav a {
-    color: white; 
-    margin: 0 20px; 
-    text-decoration: none; 
-    font-weight: bold; 
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
     position: relative;
     transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 18px;
+}
+
+nav a span {
+    color: #ffdd57; /* Kolor dla spana w linkach */
 }
 
 nav a::after {
-    content: ""; 
+    content: "";
     display: block;
-    width: 100%; 
-    height: 2px; 
-    background: white; 
-    transform: scaleX(0); 
-    transition: transform 0.3s ease; 
+    width: 100%;
+    height: 3px; /* Grubsza linia */
+    background: #ffdd57;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
 nav a:hover::after {
-    transform: scaleX(1); 
+    transform: scaleX(1);
 }
 
 nav a:hover {
-    color: #ffdd57; 
-    transform: translateY(-2px);
+    color: #00C1FF;
+    transform: translateY(-3px);
 }
 
 /* Sekcja tekstowa: lewa i prawa kolumna */
@@ -86,106 +98,109 @@ nav a:hover {
     justify-content: space-between;
     align-items: flex-start;
     max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
     position: relative;
     z-index: 2;
 }
 
 .left-section, .right-section {
-    width: 48%; 
-    text-align: left; 
-    color: black; 
+    width: 48%;
+    text-align: left;
+    color: #333;
 }
 
 /* Poprawienie listowania */
 ul {
-    padding-left: 20px; 
+    padding-left: 20px;
+    list-style-type: disc;
 }
 
-/* Dodatkowe stylizacje dla nagłówków */
 .text-section h2 {
-    color: #007BFF; 
+    color: #007BFF;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.text-section h2 span {
+    color: #ffdd57;
+    font-style: italic;
 }
 
 /* Sekcja z kartami */
 .cards {
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 40px auto;
     padding: 20px;
 }
 
 .card {
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 10px;
-    flex: 1 1 30%; 
-    transition: transform 0.3s ease;
-    position: relative; 
-    padding-bottom: 40px; 
-    overflow: hidden; /* Ukrywa nadmiar obrazka */
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    margin: 20px;
+    flex: 1 1 30%;
+    transition: transform 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .card:hover {
-    transform: translateY(-15px); 
+    transform: translateY(-10px);
 }
 
 .card h2 {
-    color: #007BFF; 
+    color: #007BFF;
     font-size: 24px;
-    margin: 0 0 10px;
+    font-weight: 600;
 }
 
 .card p {
     color: #555;
     font-size: 16px;
-    margin: 0 0 15px;
+    margin-bottom: 20px;
 }
 
-/* Stylizacja linku "Czytaj więcej" */
+/* Link "Czytaj więcej" */
 .read-more {
-    position: absolute; 
+    position: absolute;
     right: 20px;
-    bottom: 20px; 
-    text-decoration: none; 
-    color: #007BFF; 
-    font-weight: bold; 
+    bottom: 20px;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .read-more:hover {
-    color: #ea0404; 
+    color: #ea0404;
 }
 
 /* Stylizacja nagłówków h3 */
 h3 {
-    text-align: center; 
-    font-weight: bold; 
-    font-size: 22px; 
-    color: #000000; 
+    text-align: center;
+    font-weight: 600;
+    font-size: 22px;
+    color: #000;
 }
 
-/* Stylizacja akapitów (p) w sekcji kart pod nagłówkami h3 */
 .cards h3 + p {
-    font-style: italic; 
-    text-indent: 40px; 
+    font-style: italic;
+    text-indent: 40px;
     line-height: 1.6;
-    margin-top: 10px; 
-    color: #555; 
+    margin-top: 10px;
+    color: #555;
 }
 
-/* Efekt wyświetlania obrazka w karcie 1 po najechaniu myszką */
-.card1 .card-image,
-.card2 .card-image,
-.card3 .card-image {
+/* Efekt wyświetlania obrazka w kartach */
+.card .card-image {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -193,85 +208,69 @@ h3 {
     width: 0;
     height: 0;
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    z-index: -1;
 }
 
-.card1:hover .card-image,
-.card2:hover .card-image,
-.card3:hover .card-image {
-    width: 110%; 
-    height: 200%; 
-    opacity: 0.3;
-    z-index: -1; 
+.card:hover .card-image {
+    width: 120%;
+    height: 120%;
+    opacity: 0.2;
 }
-
 
 /* Stylizacja stopki */
 footer {
-    background-color: rgba(51, 51, 51, 0.8); 
+    background-color: rgba(17, 17, 44, 0.9);
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 0;
     margin-top: 40px;
     position: relative;
     z-index: 2;
 }
 
 footer a {
-    color: #007BFF;
+    color: #ffdd57;
     text-decoration: none;
+    font-weight: bold;
 }
 
 footer a:hover {
     text-decoration: underline;
 }
 
-/* Responsywność - małe ekrany (np. smartfony) */
+/* Responsywność */
 @media (max-width: 768px) {
-    /* Ustawienie kolumn jedna pod drugą */
     .text-section {
         flex-direction: column;
     }
 
     .left-section, .right-section {
-        width: 100%; /* Zmiana szerokości na 100% */
-        margin-bottom: 20px; /* Dodanie odstępu między sekcjami */
+        width: 100%;
+        margin-bottom: 20px;
     }
 
-    /* Ustawienie kart w jednej kolumnie */
     .cards {
         flex-direction: column;
         align-items: center;
     }
 
     .card {
-        width: 100%; /* Karty zajmują pełną szerokość */
-        max-width: 400px; /* Opcjonalnie: maksymalna szerokość kart */
-        margin-bottom: 20px; /* Odstęp między kartami */
-    }
-
-    /* Dostosowanie rozmiaru tekstu */
-    header h1 {
-        font-size: 32px; /* Zmniejszenie czcionki w nagłówku */
-    }
-
-    nav a {
-        margin: 0 10px; /* Zmniejszenie odstępów między linkami */
-        font-size: 14px; /* Zmniejszenie czcionki */
+        width: 100%;
+        max-width: 400px;
     }
 }
 
-/* Responsywność - bardzo małe ekrany (np. telefony poniżej 500px) */
 @media (max-width: 500px) {
     header h1 {
-        font-size: 24px; /* Jeszcze mniejsze czcionki dla nagłówków */
+        font-size: 28px;
     }
 
     .card h2 {
-        font-size: 20px; /* Zmniejszenie nagłówków kart */
+        font-size: 20px;
     }
 
     .read-more {
-        font-size: 14px; /* Zmniejszenie tekstu linków "Czytaj więcej" */
+        font-size: 14px;
     }
 }

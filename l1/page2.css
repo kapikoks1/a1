@@ -1,0 +1,341 @@
+/* Globalne style */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    background: url('zegar.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px 0;
+    text-align: center;
+    color: white;
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 20px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+nav {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    margin: 10px 0;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+nav a:hover {
+    color: #ffdd57;
+    transform: translateY(-2px);
+}
+
+.text-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1400px;
+    margin: 80px auto;
+    padding: 60px;
+    background-color: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.left-section,
+.right-section {
+    width: 45%;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 40px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.left-section:hover,
+.right-section:hover {
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.text-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 0;
+}
+
+.left-section {
+    transform: rotate(-10deg);
+}
+
+.right-section {
+    transform: rotate(10deg);
+}
+
+.left-section:hover,
+.right-section:hover {
+    transform: rotate(0deg);
+}
+
+.left-section p,
+.right-section p {
+    color: #555;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.left-section h2,
+.right-section h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #ff5722;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .text-section {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .left-section,
+    .right-section {
+        width: 100%;
+        margin-bottom: 20px;
+        transform: none;
+    }
+
+    .text-section::before {
+        display: none;
+    }
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.card {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 calc(30% - 20px);
+    transition: transform 0.3s ease, clip-path 0.3s ease;
+    clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    clip-path: polygon(0% 0, 90% 0, 100% 10%, 100% 90%, 10% 100%, 0 100%);
+}
+
+.card h2 {
+    color: #007BFF;
+    font-size: 24px;
+    margin: 0 0 10px;
+}
+
+.card p {
+    color: #555;
+    font-size: 16px;
+    margin: 0 0 15px;
+}
+
+footer {
+    background-color: rgba(51, 51, 51, 0.8);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+footer a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Style dla zegarów */
+.clock-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.clock {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border: 5px solid #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.hand {
+    position: absolute;
+    background: #333; /* Kolor ogólny dla wskazówek */
+    transform-origin: bottom center; /* Punkt obrotu na dolnej krawędzi i w centrum */
+    bottom: 50%; /* Ustawienie na środku tarczy zegara */
+}
+
+/* Wskazówki */
+.hour-hand {
+    height: 35px; /* Długość wskazówki godzinowej */
+    width: 6px;   /* Szerokość wskazówki godzinowej */
+    border-radius: 5px; /* Zaokrąglenie krawędzi */
+    z-index: 3; /* Ustalanie warstwy */
+    background: #333; /* Kolor wskazówki */
+}
+
+.minute-hand {
+    height: 50px; /* Długość wskazówki minutowej */
+    width: 4px;   /* Szerokość wskazówki minutowej */
+    border-radius: 5px; /* Zaokrąglenie krawędzi */
+    z-index: 2; /* Ustalanie warstwy */
+    background: #333; /* Kolor wskazówki */
+}
+
+.second-hand {
+    height: 60px; /* Długość wskazówki sekundowej */
+    width: 2px;   /* Szerokość wskazówki sekundowej */
+    border-radius: 5px; /* Zaokrąglenie krawędzi */
+    background: red; /* Kolor wskazówki sekundowej */
+    z-index: 1; /* Ustalanie warstwy */
+}
+
+
+
+/* Stylizacja cyfrowego czasu */
+.digital-time {
+    font-size: 2em; /* Rozmiar czcionki dla cyfrowego czasu */
+    margin: 10px 0; /* Marginesy */
+    position: absolute; /* Pozycjonowanie absolutne */
+    top: 160px; /* Pozycja w pionie */
+    text-align: center; /* Wyśrodkowanie tekstu */
+}
+
+/* Stylizacja nazwy miasta */
+.city-name {
+    font-weight: bold; /* Pogrubienie czcionki */
+    font-size: 1.5em; /* Rozmiar czcionki */
+    position: absolute; /* Pozycjonowanie absolutne */
+    top: 15px; /* Pozycja w pionie */
+}
+
+
+@media (max-width: 1200px) {
+    .card {
+        flex: 1 1 calc(45% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(100% - 20px);
+    }
+
+    .clock {
+        width: 120px;
+        height: 120px;
+    }
+
+    .digital-time {
+        font-size: 1.5em;
+    }
+
+    .city-name {
+        font-size: 1.2em;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    .left-section h2,
+    .right-section h2 {
+        font-size: 24px;
+    }
+
+    .left-section p,
+    .right-section p {
+        font-size: 16px;
+    }
+}
