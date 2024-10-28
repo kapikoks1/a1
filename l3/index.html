@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maps with Leaflet</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="leaflet-1.7.1/leaflet.css" />
+    <script src="leaflet-1.7.1/leaflet-src.js"></script>
+    <script src="leaflet-1.7.1/leaflet-providers.js"></script>
+    <script src="leaflet-1.7.1/leaflet-image.js"></script>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="background"></div>
+    <div id="dropAreaContainer">
+        <div id="puzzleContainer"></div>
+        <div id="dropArea" style="display: grid; grid-template-columns: repeat(4, 150px); grid-template-rows: repeat(4, 75px);"></div>
+        <div id="message"></div>
+    </div>
+
+    <button id="getLocation">Get Current Location</button>
+    <button id="saveButton">Save Raster Map</button>
+    <br>
+
+    <canvas id="rasterMap" width="600" height="300"></canvas>
+
+    <!-- Ekran końcowy wygranej -->
+    <div id="winScreen">
+        <h1>Wygrana!</h1>
+        <button id="replayButton">Zagraj ponownie</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

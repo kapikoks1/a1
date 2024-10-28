@@ -1,0 +1,142 @@
+body {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    position: relative; 
+}
+
+
+#background {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(0, 191, 255, 0.4)); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+
+#map, #rasterMap {
+    width: 600px;
+    height: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    position: relative; 
+    z-index: 1; 
+}
+
+#rasterMap {
+    display: none;
+}
+
+.puzzle-piece {
+    width: 150px;
+    height: 75px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    background-color: #fff;
+    display: inline-block;
+    cursor: pointer;
+    margin: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.puzzle-piece:hover {
+    transform: scale(1.05);
+}
+
+#puzzleContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    border: 2px solid #007BFF;
+    background-color: #E0F7FA;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.drop-area {
+    width: 150px;
+    height: 75px;
+    border: 2px dashed #007BFF;
+    border-radius: 5px;
+    margin: 2px;
+    position: relative;
+    background-color: #E3F2FD;
+    transition: background-color 0.3s;
+}
+
+.drop-area.filled {
+    background-color: #B2EBF2;
+}
+
+#dropAreaContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 20px;
+    height: 30px;
+    font-weight: bold;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+
+#winScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 128, 0, 0.8); 
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    visibility: hidden;
+    z-index: 1000;
+    backdrop-filter: blur(4px); 
+}
+
+#winScreen h1 {
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#replayButton {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    color: green;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+#replayButton:hover {
+    background-color: #e0e0e0;
+}
