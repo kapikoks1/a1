@@ -3,7 +3,7 @@ let map = L.map('map').setView([53.430127, 14.564802], 18);
 L.tileLayer.provider('Esri.WorldImagery').addTo(map);
 let marker = L.marker([53.430127, 14.564802]).addTo(map);
 marker.bindPopup("<strong>Hello!</strong><br>This is a popup.").openPopup();
-
+document.addEventListener("DOMContentLoaded", requestNotificationPermission);
 
 document.getElementById("saveButton").addEventListener("click", function() {
     leafletImage(map, function (err, canvas) {
@@ -20,6 +20,27 @@ document.getElementById("saveButton").addEventListener("click", function() {
     });
 });
 
+
+function requestNotificationPermission() {
+    if ("Notification" in window && Notification.permission !== "granted") {
+        Notification.requestPermission().then(permission => {
+            if (permission === "granted") {
+                console.log("Notification permission granted.");
+            } else {
+                console.log("Notification permission denied.");
+            }
+        });
+    }
+}
+
+function showSystemNotification() {
+    if ("Notification" in window && Notification.permission === "granted") {
+        new Notification("Congratulations!", {
+            body: "You successfully completed the puzzle!",
+            icon: "path/to/icon.png" 
+        });
+    }
+}
 
 function createPuzzles(originalCanvas) {
     const puzzleContainer = document.getElementById("puzzleContainer");
@@ -91,18 +112,28 @@ function handleDragStart(e) {
 let totalCorrectPieces = 0;
 
 function placePiece(droppedPosition, targetCell) {
+    console.log(`Próba umieszczenia elementu na pozycji ${droppedPosition} w komórce o poprawnej pozycji ${targetCell.dataset.correctPosition}.`);
+
     const puzzlePiece = document.querySelector(`.puzzle-piece[data-correct-position='${droppedPosition}']`);
     
+    if (!puzzlePiece) {
+        console.error("Błąd: Nie znaleziono elementu puzzli dla pozycji:", droppedPosition);
+        return;
+    }
+
     if (targetCell.dataset.correctPosition === droppedPosition && puzzlePiece.dataset.isPlaced === 'false') {
+        console.log("Element pasuje do tej pozycji.");
         targetCell.appendChild(puzzlePiece);
         targetCell.classList.add('filled');
-        puzzlePiece.dataset.isPlaced = 'true'; 
+        puzzlePiece.dataset.isPlaced = 'true';
         totalCorrectPieces++;
+
+        console.log(`Element poprawnie umieszczony. Liczba poprawnie ułożonych elementów: ${totalCorrectPieces}`);
         displayMessage("Great job!", "correct");
         checkCompletion(); 
     } else {
+        console.warn("Element nie pasuje do tej pozycji lub został już umieszczony.");
         displayMessage("Try again!", "incorrect");
-
     }
 }
 
@@ -156,6 +187,7 @@ function checkCompletion() {
 function displayWinScreen() {
     const winScreen = document.getElementById("winScreen");
     winScreen.style.visibility = "visible";
+    showSystemNotification();
 }
 
 document.getElementById("replayButton").addEventListener("click", () => {
