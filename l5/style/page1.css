@@ -1,0 +1,432 @@
+/* Globalne style */
+body {
+    font-family: 'Poppins', sans-serif; /* Nowa czcionka */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden;
+}
+
+/* Tło z obrazem */
+body::before {
+    content: "";
+    background: url('zdjecia/sam.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2; /* Zmniejszona przezroczystość tła */
+    z-index: -1;
+}
+
+/* Stylizacja nagłówka */
+header {
+    background: linear-gradient(to right, rgba(17, 17, 44, 0.9), rgba(0, 193, 255, 0.9)); /* Gradient bardziej wyrazisty */
+    padding: 30px 0;
+    text-align: center;
+    color: white;
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 30px 30px; /* Zaokrąglone rogi */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: #ffdd57; /* Wyrazisty kolor */
+}
+
+header h1 span {
+    color: #00C1FF; /* Kolor spana */
+    font-style: italic;
+}
+
+/* Stylizacja nawigacji */
+nav {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 18px;
+}
+
+nav a span {
+    color: #ffdd57; /* Kolor dla spana w linkach */
+}
+
+nav a::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px; /* Grubsza linia */
+    background: #ffdd57;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+nav a:hover {
+    color: #00C1FF;
+    transform: translateY(-3px);
+}
+
+/* Sekcja tekstowa: lewa i prawa kolumna */
+.text-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.left-section, .right-section {
+    width: 48%;
+    text-align: left;
+    color: #333;
+}
+
+/* Poprawienie listowania */
+ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.text-section h2 {
+    color: #007BFF;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.text-section h2 span {
+    color: #ffdd57;
+    font-style: italic;
+}
+
+/* Sekcja z kartami */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    margin: 20px;
+    flex: 1 1 30%;
+    transition: transform 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h2 {
+    color: #007BFF;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.card p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Link "Czytaj więcej" */
+.read-more {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #ea0404;
+}
+
+/* Stylizacja nagłówków h3 */
+h3 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 22px;
+    color: #000;
+}
+
+.cards h3 + p {
+    font-style: italic;
+    text-indent: 40px;
+    line-height: 1.6;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Efekt wyświetlania obrazka w kartach */
+.card .card-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.card:hover .card-image {
+    width: 120%;
+    height: 120%;
+    opacity: 0.2;
+}
+
+/* Stylizacja stopki */
+footer {
+    background-color: rgba(17, 17, 44, 0.9);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+footer a {
+    color: #ffdd57;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .text-section {
+        flex-direction: column;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+
+@media (max-width: 376px) {
+    .clock-container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .clock {
+        width: 100%; 
+        margin-bottom: 20px; 
+    }
+
+
+    .cards {
+        flex-direction: column; 
+        align-items: flex-start; 
+        padding: 0; 
+        margin: 0; 
+    }
+
+    .card {
+        width: 85%; 
+        max-width: none; 
+        margin: 0; 
+        margin-bottom: 20px; 
+    }
+    
+}
+
+@media (max-width: 500px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    .card h2 {
+        font-size: 20px;
+    }
+
+    .read-more {
+        font-size: 14px;
+    }
+}
+
+/* Stylizacja kontenera zegarów */
+.clock-container {
+    display: flex; 
+    justify-content: center;
+    margin: 40px auto; 
+    position: relative;
+}
+
+/* Stylizacja pojedynczego zegara */
+.clock {
+    width: 120px; 
+    margin: 0 15px; 
+    position: relative; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+    text-align: center; 
+    padding: 15px;
+    background-size: cover; 
+    background-position: center; 
+    overflow: hidden; 
+}
+
+/* Overlay dla półprzezroczystości */
+.clock::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.6); 
+    z-index: 1; 
+}
+
+/* Stylizacja zegarów z flagami */
+#clock-warsaw {
+    background-image: url('zdjecia/pl.png'); 
+}
+
+#clock-london {
+    background-image: url('zdjecia/eng.png');
+}
+
+#clock-beijing {
+    background-image: url('zdjecia/ch.png'); 
+}
+
+#clock-newyork {
+    background-image: url('zdjecia/am.png'); 
+}
+
+.city-name {
+    font-weight: 700;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.digital-time {
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #333;
+    position: relative;
+    z-index: 2;
+}
+
+/* Stylizacja wstążki */
+.ribbon {
+    width: 150px;
+    height: 150px;
+    overflow: hidden; 
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: 10;
+}
+
+.ribbon span {
+    position: absolute;
+    display: block;
+    width: 200px;
+    padding: 10px 0;
+    background: red;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    top: 30px;
+    right: -50px;
+    transform: rotate(45deg); 
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 1440px) {
+    .text-section {
+        max-width: 1400px; 
+        padding: 40px;
+    }
+
+    .cards {
+        max-width: 1400px; 
+    }
+
+    .card {
+        flex: 1 1 22%; 
+        margin: 20px 10px;
+        padding: 40px; 
+    }
+
+    header h1 {
+        font-size: 60px; 
+    }
+
+    .clock-container {
+        max-width: 1400px;
+        margin: 60px auto;
+    }
+
+    .clock {
+        width: 180px; 
+        padding: 25px;
+    }
+}

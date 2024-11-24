@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje Podróże</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Moje Podróże</h1>
+        <nav>
+
+        </nav>
+        
+    </header>
+    
+    <div class="clock-container">
+        <div class="clock" id="clock-warsaw">
+            <div class="hand hour-hand" id="hour-hand-warsaw"></div>
+            <div class="hand minute-hand" id="minute-hand-warsaw"></div>
+            <div class="hand second-hand" id="second-hand-warsaw"></div>
+            <div class="city-name">Warszawa</div>
+            <div class="digital-time" id="digital-time-warsaw">00:00:00</div>
+        </div>
+        
+        <div class="clock" id="clock-london">
+            <div class="hand hour-hand" id="hour-hand-london"></div>
+            <div class="hand minute-hand" id="minute-hand-london"></div>
+            <div class="hand second-hand" id="second-hand-london"></div>
+            <div class="city-name">Londyn</div>
+            <div class="digital-time" id="digital-time-london">00:00:00</div>
+        </div>
+        
+        <div class="clock" id="clock-beijing">
+            <div class="hand hour-hand" id="hour-hand-beijing"></div>
+            <div class="hand minute-hand" id="minute-hand-beijing"></div>
+            <div class="hand second-hand" id="second-hand-beijing"></div>
+            <div class="city-name">Pekin</div>
+            <div class="digital-time" id="digital-time-beijing">00:00:00</div>
+        </div>
+        
+        <div class="clock" id="clock-newyork">
+            <div class="hand hour-hand" id="hour-hand-newyork"></div>
+            <div class="hand minute-hand" id="minute-hand-newyork"></div>
+            <div class="hand second-hand" id="second-hand-newyork"></div>
+            <span class="city-name">Nowy <span class="city-name-bold">Jork</span></span>
+            <div class="digital-time" id="digital-time-newyork">00:00:00</div>
+        </div>
+    </div>
+    
+    <div class="text-section">
+        <div class="left-section">
+            <h2>Moje ulubione destynacje</h2>
+            <p>W ciągu ostatnich lat miałem okazję odwiedzić wiele fascynujących miejsc. Każde z nich miało w sobie coś wyjątkowego. Oto lista moich ulubionych destynacji:</p>
+            <ul>
+                <li>Japonia - kraj kontrastów, gdzie nowoczesność spotyka się z tradycją.</li>
+                <li>Nowa Zelandia - niesamowite krajobrazy, które wyglądają jak z filmu.</li>
+                <li>Włochy - kraj pełen historii, kultury i przepysznej kuchni.</li>
+            </ul>
+            <p>Każda z tych podróży dostarczyła mi mnóstwo wrażeń i inspiracji, które chętnie opisuję na moim blogu.</p>
+        </div>
+
+        <div class="right-section">
+            <h2>Praktyczne porady</h2>
+            <p>Podróżując, nauczyłem się wielu rzeczy, które mogą być przydatne dla innych podróżników. Oto kilka praktycznych porad:</p>
+            <ul>
+                <li>Zawsze planuj swoją podróż z wyprzedzeniem, ale bądź otwarty na niespodzianki.</li>
+                <li>Zabieraj tylko niezbędne rzeczy – minimalizm ułatwia podróżowanie.</li>
+                <li>Znajdź czas na odpoczynek – podróżowanie nie zawsze musi być intensywne.</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="cards">
+        <div class="card card1"> <div class="ribbon"><span>Nowy wpis!</span></div>
+            <h3>Moje Ostatnie Podróże</h3>
+            <p>Odwiedziłem wiele niesamowitych miejsc, a każde z nich miało swój niepowtarzalny urok. W szczególności zapadła mi w pamięć podróż do Japonii, gdzie mogłem zobaczyć wschód słońca nad górą Fuji.</p>
+            <a href="#" class="read-more">Czytaj więcej</a>
+        </div>
+        <div class="card card2">
+            <h3>Porady Podróżnicze</h3>
+            <p>Podczas podróży nauczyłem się wielu praktycznych rzeczy. Kluczowe jest zawsze zaplanowanie trasy oraz elastyczność w dostosowywaniu się do sytuacji.</p>
+            <a href="#" class="read-more">Czytaj więcej</a>
+        </div>
+        <div class="card card3">
+            <h3>Co Zabrać w Podróż</h3>
+            <p>Przygotowując się do podróży, ważne jest, aby spakować tylko niezbędne rzeczy. Minimalizm w bagażu sprawia, że podróżowanie staje się łatwiejsze i przyjemniejsze.</p>
+            <a href="#" class="read-more">Czytaj więcej</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Moje Podróże. Wszystkie prawa zastrzeżone. | <a href="#">Polityka prywatności</a> |</p>
+    </footer>
+    <script src="dist/script.js" type="module"></script>
+    <script src="clock.js"></script>
+
+    
+</body>
+</html>
