@@ -86,6 +86,8 @@ class StyleManager {
 const styles: StylesDictionary = {
     'css1': 'style/page1.css',
     'css2': 'style/page2.css',
+    'czerwone': 'style/page3.css',
+
 
     
 };

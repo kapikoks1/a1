@@ -68,7 +68,6 @@ var StyleManager = /*#__PURE__*/function () {
           var target = event.target;
           var newStyle = target.getAttribute('data-style');
           if (newStyle) {
-            // Zmień styl na wybrany
             _this.applyStyle(newStyle);
           }
         });
@@ -78,7 +77,8 @@ var StyleManager = /*#__PURE__*/function () {
 }();
 var styles = {
   'css1': 'style/page1.css',
-  'css2': 'style/page2.css'
+  'css2': 'style/page2.css',
+  'czerwone': 'style/page3.css'
 };
 new StyleManager(styles);
 /******/ })()
